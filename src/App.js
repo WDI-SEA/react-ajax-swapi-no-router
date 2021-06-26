@@ -6,6 +6,7 @@ const App = () => {
   return (
     <div className="App">
     <h1>SWAPI: Starships</h1>
+    <hr class="top" />
 <Starship />
     </div>
   )

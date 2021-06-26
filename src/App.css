@@ -16,15 +16,15 @@ opacity: .5;
 
 .container {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   margin: 0 auto;
   width: 555px;
   text-align: left;
-  border: 2px solid green;
 }
 
 .App {
   text-align: center;
+  width: 555px;
 }
 
 .App-logo {
