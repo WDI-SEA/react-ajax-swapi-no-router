@@ -1,3 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@100;200;300;800&display=swap');
+
+
+body {
+  background-image:
+  linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),
+  url('./images/SW_bg2.jpg');
+  color: white;
+  font-family: 'Trispace', sans-serif;
+}
+
+hr {
+opacity: .5;
+}
+
+.container {
+  display: flex;
+  /* justify-content: center; */
+  margin: 0 auto;
+  width: 555px;
+  text-align: left;
+  border: 2px solid green;
+}
+
 .App {
   text-align: center;
 }

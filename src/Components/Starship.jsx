@@ -21,23 +21,21 @@ const Starship = () => {
                 <div class="starshipItem" key={index}>
                     Name: {ship.name}
                 </div>
-            </div>
-            <div class="container">
+
                 <div class="starshipItem" key={index}>
                     Starship Class: {ship.starship_class}
                 </div>
-            </div>
-            <div class="container">
+
                 <div class="starshipItem" key={index}>
                     Manufacturer: {ship.manufacturer}
                 </div>
-            </div>
-            <div class="container">
+
                 <div class="starshipItem" key={index}>
                     Max. Speed: {ship.max_atmosphering_speed}
                 </div>
-                <hr/>
+
             </div>
+            <hr/>
             </>
                 )
             })
