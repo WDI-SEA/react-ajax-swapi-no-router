@@ -2,6 +2,10 @@ import './App.css';
 import Starships from './Starships'
 
 const App = () => {
-    return <Starships />
+    return (
+        <main>
+            <Starships />
+        </main>
+    )
 }
 export default App;

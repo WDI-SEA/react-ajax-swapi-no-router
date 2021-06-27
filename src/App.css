@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+main {
+    margin: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ship-plural-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+    background-color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ship-sing-box {
+    background-color: rgb(88,88,88);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+table {
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 35px 15px;
 }
 
-.App-link {
-  color: #61dafb;
+/* tbody tr:nth-child(even) {
+    background-color: rgb(100,100,100);
+} */
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: rgb(120,120,120);
+    border-radius: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.capitalize {
+    text-transform: capitalize;
 }
