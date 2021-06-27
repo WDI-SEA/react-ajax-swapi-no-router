@@ -4,6 +4,19 @@ import Pilot from './Pilot'
 const ShipCard = (props) => {
     const [pilots, setPilots] = useState([])
 
+    useEffect(() => {
+        setPilots(props.ship.pilots)
+    },[pilots])
+
+    let pilotInfo = pilots.map(pilot => {
+        return (
+            <Pilot 
+                pilot={pilot}
+            />
+        )
+    })
+
+
     return (
         <div className="ship-sing-box">
             <table>
@@ -16,6 +29,10 @@ const ShipCard = (props) => {
                     <tr className="capitalize">
                         <th>Class</th>
                         <td>{props.ship.starship_class}</td>
+                    </tr>
+                    <tr>
+                        <th>Pilots</th>
+                        <td>{pilotInfo}</td>
                     </tr>
                     <tr>
                         <th>Cargo Capacity (kg)</th>
