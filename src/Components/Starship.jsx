@@ -19,7 +19,7 @@ const Starship = () => {
             <>
             <div class="container">
                 <div class="starshipItem" key={index}>
-                    <h1>{ship.name}</h1>
+                    <h1></h1>Name: {ship.name}
                 </div>
             </div>
             <div class="container">
@@ -36,8 +36,8 @@ const Starship = () => {
                 <div class="starshipItem" key={index}>
                     Max. Speed: {ship.max_atmosphering_speed}
                 </div>
+                                <hr/>
             </div>
-            <hr/>
             </>
                 )
             })

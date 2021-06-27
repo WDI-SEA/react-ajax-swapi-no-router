@@ -1,13 +1,25 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Trispace:wght@100;200;300;800&display=swap');
 
+@font-face {
+  font-family: 'PokemonSolid';
+  src: url('./resources/PokemonSolid.woff') format('ttf'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   url('./resources/PokemonSolid.woff') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+@import url('https://db.onlinewebfonts.com/c/0c724f6aa457310440cf8949c615cbd7?family=Star+Jedi');
 
 body {
   background-image:
-  linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),
-  url('./images/SW_bg2.jpg');
+  linear-gradient(to top, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),
+  url('./images/SW_bg1.jpg');
   color: white;
   font-family: 'Trispace', sans-serif;
+}
+
+.titleTop {
+  font-family: "Star Jedi", monospace, sans-serif;
+  font-size: 56px;
 }
 
 hr {
@@ -15,16 +27,21 @@ opacity: .5;
 }
 
 .container {
+  /* margin: 0 auto; */
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  width: 555px;
+  width: 655px;
   text-align: left;
+
 }
 
 .App {
   text-align: center;
-  width: 555px;
+  width: 655px;
+  background-color:rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  font-family: 'star-wars-font', monospace, sans-serif;
 }
 
 .App-logo {
