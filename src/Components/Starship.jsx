@@ -18,26 +18,27 @@ const Starship = () => {
         return (
             <>
             <div class="container">
-                <div class="starshipItem" key={index}>
-                    <h1></h1>Name: {ship.name}
+                <div class="starship-item" key={index}>
+                <span class="itl1">Name:</span> <span class="bld1">{ship.name}</span>
                 </div>
             </div>
             <div class="container">
-                <div class="starshipItem" key={index}>
-                    Starship Class: {ship.starship_class}
+                <div class="starship-item" key={index}>
+                <span class="itl1">Starship Class:</span> <span class="bld1">{ship.starship_class}</span>
                 </div>
             </div>
             <div class="container">
-                <div class="starshipItem" key={index}>
-                    Manufacturer: {ship.manufacturer}
+                <div class="starship-item" key={index}>
+                <span class="itl1">Manufacturer:</span> <span class="bld1">{ship.manufacturer}</span>
                 </div>
             </div>
             <div class="container">
-                <div class="starshipItem" key={index}>
-                    Max. Speed: {ship.max_atmosphering_speed}
+                <div class="starship-item" key={index}>
+                    <span class="itl1">Max. Speed:</span> <span class="bld1">{ship.max_atmosphering_speed}</span>
                 </div>
                                 <hr/>
             </div>
+            <hr/>
             </>
                 )
             })
