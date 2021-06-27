@@ -48,12 +48,11 @@ const Starship = () => {
     useEffect(() => {
         getAPI()
     }, [])
-
-
+    
     return (
-<>
+    <>
         {ships}
-</>
+    </>
     )
 }
 
