@@ -28,7 +28,7 @@ const Starships = () => {
 
     return (
         <div>
-            <ShipCard />
+            <ShipCard ships={ships}/>
         </div>
     )
 }
