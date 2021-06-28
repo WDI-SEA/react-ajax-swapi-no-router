@@ -6,7 +6,7 @@ const ShipCard = (props) => {
 
     useEffect(() => {
         setPilots(props.ship.pilots)
-    },[pilots])
+    }, [props.ship.pilots])
 
     let pilotInfo = pilots.map(pilot => {
         return (
@@ -15,7 +15,6 @@ const ShipCard = (props) => {
             />
         )
     })
-
 
     return (
         <div className="ship-sing-box">
@@ -32,7 +31,7 @@ const ShipCard = (props) => {
                     </tr>
                     <tr>
                         <th>Pilots</th>
-                        <td>{pilotInfo}</td>
+                        <td className="pilotInfo">{pilotInfo}</td>
                     </tr>
                     <tr>
                         <th>Cargo Capacity (kg)</th>

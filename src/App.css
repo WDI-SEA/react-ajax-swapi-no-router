@@ -24,10 +24,6 @@ table {
     border-spacing: 35px 15px;
 }
 
-/* tbody tr:nth-child(even) {
-    background-color: rgb(100,100,100);
-} */
-
 h2 {
     display: flex;
     justify-content: center;
@@ -37,6 +33,10 @@ h2 {
     padding: 5px;
     background-color: rgb(120,120,120);
     border-radius: 15px;
+}
+
+.pilotInfo div:nth-child(even) {
+    color: rgb(150,150,150);
 }
 
 .capitalize {
