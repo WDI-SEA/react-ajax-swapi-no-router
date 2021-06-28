@@ -1,17 +1,28 @@
 import { useState, useEffect } from "react"
 import Pilot from './Pilot'
+import Film from './Film'
 
 const ShipCard = (props) => {
     const [pilots, setPilots] = useState([])
+    const [films, setFilms] = useState([])
 
     useEffect(() => {
         setPilots(props.ship.pilots)
-    }, [props.ship.pilots])
+        setFilms(props.ship.films)
+    }, [props.ship.pilots, props.ship.films])
 
     let pilotInfo = pilots.map(pilot => {
         return (
             <Pilot 
                 pilot={pilot}
+            />
+        )
+    })
+
+    let filmInfo = films.map(film => {
+        return (
+            <Film
+                film={film}
             />
         )
     })
@@ -31,7 +42,13 @@ const ShipCard = (props) => {
                     </tr>
                     <tr>
                         <th>Pilots</th>
-                        <td className="pilotInfo">{pilotInfo}</td>
+                        <td className="altInfo">{pilotInfo}</td>
+                    </tr>
+                    <tr>
+                        <th>Films</th>
+                        <td className="altInfo italic">{filmInfo}</td>
+                    </tr>
+                    <tr>
                     </tr>
                     <tr>
                         <th>Cargo Capacity (kg)</th>

@@ -3,7 +3,6 @@ import { useState, useEffect } from "react"
 const Pilot = (props) => {
     const [pilotName, setPilotName] = useState("")
     useEffect(() => {
-        console.log(props.pilot)
         fetch(props.pilot)
         .then(res => res.json())
         .then(rdata => {
@@ -13,7 +12,7 @@ const Pilot = (props) => {
     })
 
     return (
-        <div>
+        <div id="altName">
             {pilotName}
         </div>
     )
