@@ -4,9 +4,11 @@
 .App {
   text-align: center;
   background-image: url("./space.jpeg");
-  background-position: cover;
+  background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   margin: 0 auto;
+  overflow: auto;
 }
 
 
