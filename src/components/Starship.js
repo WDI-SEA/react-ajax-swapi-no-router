@@ -1,11 +1,9 @@
-import React from 'react'
 
-const Starships = (props) => {
+const Starship = (props) => {
     
   
     return (
-        <div>
-            
+        <div> 
             <div>
                 {props.stuff}
             </div>
@@ -13,4 +11,4 @@ const Starships = (props) => {
     )
 }
 
-export default Starships
+export default Starship
