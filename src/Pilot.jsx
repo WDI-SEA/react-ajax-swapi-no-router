@@ -9,7 +9,7 @@ const Pilot = (props) => {
             setPilotName(rdata.name)
         })
         .catch(err => console.log(err))
-    })
+    }, [props.pilot])
 
     return (
         <div id="altName">

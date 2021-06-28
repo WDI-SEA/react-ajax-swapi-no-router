@@ -51,7 +51,7 @@ const ShipCard = (props) => {
                     <tr>
                     </tr>
                     <tr>
-                        <th>Cargo Capacity (kg)</th>
+                        <th>Cargo Cap. (kg)</th>
                         <td>{props.ship.cargo_capacity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                     </tr>
                     <tr>
@@ -67,7 +67,7 @@ const ShipCard = (props) => {
                         <td>{props.ship.passengers}</td>
                     </tr>
                     <tr>
-                        <th>Hyperdrive Rating</th>
+                        <th>Hyperdrive Class</th>
                         <td>{props.ship.hyperdrive_rating}</td>
                     </tr>
                     <tr>

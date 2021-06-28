@@ -1,13 +1,14 @@
 main {
     margin: auto;
+    float: left;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(40,40,40);
 }
 
 .ship-plural-box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 10px;
-    background-color: rgb(40,40,40);
 }
 
 .ship-sing-box {
@@ -31,7 +32,6 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
     padding: 5px;
-    /* background-color: rgb(120,120,120); */
     border-radius: 15px;
 }
 
@@ -51,10 +51,10 @@ h2 {
     font-style: italic;
 }
 
-#altName {
-    background-color: transparent;
-}
-
 .capitalize {
     text-transform: capitalize;
+}
+
+#altName {
+    background-color: transparent;
 }
