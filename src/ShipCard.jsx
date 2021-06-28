@@ -12,19 +12,10 @@ const ShipCard = (props) => {
     }, [props.ship.pilots, props.ship.films])
 
     let pilotInfo = pilots.map(pilot => {
-        return (
-            <Pilot 
-                pilot={pilot}
-            />
-        )
+        return <Pilot pilot={pilot}/>
     })
-
     let filmInfo = films.map(film => {
-        return (
-            <Film
-                film={film}
-            />
-        )
+        return <Film film={film}/>
     })
 
     return (
@@ -41,18 +32,12 @@ const ShipCard = (props) => {
                         <td>{props.ship.starship_class}</td>
                     </tr>
                     <tr>
-                        <th>Pilots</th>
-                        <td className="altInfo">{pilotInfo}</td>
+                        <th>Manufacturer</th>
+                        <td>{props.ship.manufacturer.replace("Cyngus", "Cygnus")}</td>
                     </tr>
                     <tr>
-                        <th>Films</th>
-                        <td className="altInfo italic">{filmInfo}</td>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                        <th>Cargo Cap. (kg)</th>
-                        <td>{props.ship.cargo_capacity.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+                        <th>Length (m)</th>
+                        <td>{props.ship["length"].replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                     </tr>
                     <tr>
                         <th>Price (₹)</th>
@@ -67,25 +52,33 @@ const ShipCard = (props) => {
                         <td>{props.ship.passengers.replace("n/a", "unknown")}</td>
                     </tr>
                     <tr>
+                        <th>Cargo Cap. (kg)</th>
+                        <td>{props.ship.cargo_capacity.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+                    </tr>
+                    <tr>
                         <th>Hyperdrive Class</th>
                         <td>{props.ship.hyperdrive_rating}</td>
                     </tr>
                     <tr>
-                        <th>Length (m)</th>
-                        <td>{props.ship["length"].replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
-                    </tr>
-                    <tr>
-                        <th>Manufacturer</th>
-                        <td>{props.ship.manufacturer.replace("Cyngus", "Cygnus")}</td>
+                        <th>Megalights/hr (MGLT)</th>
+                        <td>{props.ship.MGLT}</td>
                     </tr>
                     <tr>
                         <th>Max Atmo Speed (kph)</th>
                         <td>
                             {props.ship.max_atmosphering_speed
                                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-                                    .replace("km","")
-                                        .replace("n/a","unknown")}
+                                    .replace("km", "")
+                                        .replace("n/a", "unknown")}
                         </td>
+                    </tr>
+                    <tr>
+                        <th>Pilots</th>
+                        <td className="altInfo">{pilotInfo}</td>
+                    </tr>
+                    <tr>
+                        <th>Films</th>
+                        <td className="altInfo italic">{filmInfo}</td>
                     </tr>
                 </tbody>
             </table>

@@ -1,41 +1,28 @@
 import { useState, useEffect } from "react";
 import ShipCard from './ShipCard.jsx'
+import axios from 'axios'
 
 const Starships = () => {
     const [ships, setShips] = useState([])
 
     useEffect(() => {
         Promise.all([
-            fetch('https://swapi.dev/api/starships/?page=1'),
-            fetch('https://swapi.dev/api/starships/?page=2'),
-            fetch('https://swapi.dev/api/starships/?page=3'),
-            fetch('https://swapi.dev/api/starships/?page=4')
+            axios.get('https://swapi.dev/api/starships/?page=1'),
+            axios.get('https://swapi.dev/api/starships/?page=2'),
+            axios.get('https://swapi.dev/api/starships/?page=3'),
+            axios.get('https://swapi.dev/api/starships/?page=4')
         ]).then(resPlural => {
-            return Promise.all(resPlural.map(resSing => {
-                return resSing.json()
-            }))
-        }).then(data => {
-            let shipData = data.map(res => {
-                return res.results
+            let shipData = resPlural.map(resSing => {
+                return resSing.data.results
             })
             setShips([].concat.apply([], shipData))
-        }).catch(error => {
-            console.log(error)
-        })
-    }, [ships])
+        }).catch(err => console.log(err))
+    }, [])
 
     let shipInfo = ships.map(ship => {
-        return (
-            <ShipCard 
-                ship={ship}
-            />
-        )
+        return <ShipCard ship={ship}/>
     })
 
-    return (
-        <div className="ship-plural-box">
-            {shipInfo}
-        </div>
-    )
+    return <div className="ship-plural-box">{shipInfo}</div>
 }
 export default Starships;
