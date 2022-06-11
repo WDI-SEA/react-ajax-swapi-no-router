@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import Starships from "./components/Starships"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="w-full">
+      <h1 className="text-4xl text-center pb-3 font-bold border-b-2 border-gray-800 mb-5">
+        Starships
+      </h1>
+      <Starships />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
