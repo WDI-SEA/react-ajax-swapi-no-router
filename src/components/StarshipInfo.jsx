@@ -10,6 +10,7 @@ class StarshipInfo extends Component {
                 <h4>Model: {this.props.starships.model}</h4>
                 <h4>Class: {this.props.starships.starship_class}</h4>
                 <h4>Manufacturer: {this.props.starships.manufacturer}</h4>
+                <h4>Hyperdrive Rating: {this.props.starships.hyperdrive_rating}</h4>
             </>
         );
     }
