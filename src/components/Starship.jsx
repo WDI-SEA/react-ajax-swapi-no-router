@@ -13,8 +13,13 @@ export default class Starship extends Component {
     return (
       <div>
         <h1>{name}</h1>
-        <h2>{starship_class}</h2>
-        <p>Manufacturer: {manufacturer}</p>
+        <p>
+          <strong>Starship Class: </strong>
+          {starship_class}
+        </p>
+        <p>
+          <strong>Manufacturer:</strong> {manufacturer}
+        </p>
         <p>Length: {length}</p>
         {pilots.length !== 0 ? allPilots : <p>No Pilots</p>}
       </div>
