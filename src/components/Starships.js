@@ -78,6 +78,7 @@ export default class Starships extends Component {
         )
         return (
             <div>
+                <img src="https://www.denofgeek.com/wp-content/uploads/2019/02/star-wars-y-wing.jpeg" alt="millennium falcon"/>
                 <h2>Starships</h2>
                 <form onSubmit={this.handleSubmit}>
                     <select name="page" onChange={this.handlePage}>
@@ -98,6 +99,7 @@ export default class Starships extends Component {
                     >Go</button>
                 </form>
                 {this.state.responded && <Starship state={this.state} />}
+                
             </div>
         )
     }
