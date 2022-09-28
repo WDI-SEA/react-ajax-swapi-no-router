@@ -1,0 +1,54 @@
+body {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    background-color: rgb(255, 214, 236);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+
+.starContainer {
+
+    background-color: rgba(255, 161, 207, 0.7);
+    width: 90vw;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.starshipContainer {
+    border-radius: 30px;
+    background-color: rgb(255, 116, 177);
+    padding: 30px;
+    font-weight: bold;
+    margin: 0 auto 25px auto;
+    text-align: center;
+    height: fit-content;
+    width: 40vw;
+    border: 10px solid rgb(167, 255, 228);
+}
+
+.bDiv {
+    
+    width: fit-content;
+    margin: 0 auto;
+    padding: 40px;
+    
+}
+
+.pButton, .nButton {
+    font-weight: bold;
+    padding: 20px;
+    border: none;
+    width: 30vw;
+    margin: 5px;
+    border-radius: 49px;
+    font-size: larger;
+}
+
+.title {
+    margin-top: 0;
+    padding-top: 30px;
+}

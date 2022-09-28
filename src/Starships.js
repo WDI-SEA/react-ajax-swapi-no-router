@@ -15,8 +15,8 @@ export default class Starships extends Component {
         })
         return (
             <div>
-                <h2 className="">Starships</h2>
-                <div className="">
+                <h2 className="title">Starships</h2>
+                <div>
                     {singleStarship}
                 </div>
                 <Buttons 

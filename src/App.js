@@ -51,7 +51,7 @@ export default class App extends Component {
     }
     render() {
       return (
-        <div className="">
+        <div className="starContainer">
           <Starships
             starshipsList={this.state.starships}
             page={this.state.page}

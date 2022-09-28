@@ -8,13 +8,13 @@ export default class Buttons extends Component {
                     className='pButton' 
                     disabled={this.props.page <= 1 ? true : false}
                     onClick={() => this.props.handlePageClick("prev")}>
-                    Prev
+                    PREV
                 </button>
                 <button 
                     className='nButton'
                     disabled={this.props.page >= 4 ? true : false}
                     onClick={() => this.props.handlePageClick("next")}>
-                    Next
+                    NEXT
                 </button>
             </div>
         )
