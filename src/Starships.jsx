@@ -1,44 +1,40 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from "react"
+import Starship from "./Starship"
+import axios from "axios"
 
 export default class Starships extends Component {
     state = {
-        starship: '',
-        class: ""
+        starships: []
     }
-    componentDidMount(){
-        const options = {
-            headers: {
-                Accept: 'application/json'
-            }
+
+    componentDidMount = async () => {
+        try {
+            const response = await axios.get('https://swapi.dev/api/starships/')
+			console.log("SHIPS:", response.data.results)
+            this.setState({
+                starships: response.data.results
+            })
+        } catch(err) {
+            console.log(err)
         }
-        // note to self = I need more work with .mpa
-        let ships = axios.get(`https://swapi.dev/api/starships/`).map((ships, i) => {
-            return(
-                <div
-                    key = {`ships-${i}`}
-                    ships = {ships}
-                ></div>
-            )
-        })
-    //         axios.get(`https://swapi.dev/api/starships/`)
-    //         .then(response => {
-    //             this.setState({
-    //                 starship: response.data.name,
-    //                 class: response.data.starship_class
-    //             })
-                
-    //         })
-    //         .catch(console.warn)
-     }
-    
+    }
     render() {
+        const shipsInState = this.state.starships.map((ship, i) =>{ return(
+            <Starship 
+                key={`ship${i}`}
+                name={ship.name}
+                hyperdriveRating={ship.hyperdrive_rating}
+                url={ship.url}
+                cost={ship.cost_in_credits}
+                class={ship.starship_class}
+                pilots={ship.pilots}
+            />
+        )})
         return(
-        <div>
-            <h1>Star wars StarShips</h1>
-                <p>{this.state.starship}</p>
-                <p>{this.state.class}</p>
-        </div>
+            <>
+                <h1>Starships</h1>
+                {shipsInState}
+            </>
         )
     }
 }
