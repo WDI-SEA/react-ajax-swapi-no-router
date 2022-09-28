@@ -4,26 +4,58 @@ import axios from 'axios'
 
 export default class App extends Component {
   state = {
-    shipInfo: []
+    shipInfo: [],
+    pageNum: 1
   }
+
+  handleClick = () => {
+    if (this.state.pageNum < 4) {
+      this.setState(prevState => {
+        return (
+          { pageNum: 1 + prevState.pageNum }
+        )
+      })
+    }
+   
+    console.log(this.state.pageNum)
+  }
+
+
   async componentDidMount() {
     try {
-      const response = await axios.get('https://swapi.dev/api/starships')
+
+      const response = await axios.get(`https://swapi.dev/api/starships/?page=1`)
       this.setState({
         shipInfo: response.data.results
-        })
+      })
     } catch (err) {
       this.setState({ shipInfo: "Uh oh" })
       console.warn(err)
     }
   }
+
+  async componentDidUpdate(prevProps) {
+    if (this.state.pageNum !== prevProps.pageNum) {
+      const response = await axios.get(`https://swapi.dev/api/starships/?page=${this.state.pageNum}`)
+      this.setState({
+        shipInfo: response.data.results
+      })
+    }
+  }
+
+
   render() {
 
     return (
       <div>
-        <Starships 
-          shipInfo={this.state.shipInfo}
-        />
+        <div>
+          <Starships
+            shipInfo={this.state.shipInfo}
+          />
+        </div>
+        <button onClick={this.handleClick}>
+          Next Page
+        </button>
       </div>
     )
   }

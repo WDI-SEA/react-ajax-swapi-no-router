@@ -5,11 +5,10 @@ export default class Starships extends Component {
     render() {
         const aShip = this.props.shipInfo.map((aShip, i) => {
             return (
-                <div>
+                <div key={`key${i}`}>
                     <Starship 
                         aShipName={aShip.name}
                         aShipClass={aShip.starship_class}
-                    key={`key${i}`}
                     />
                 </div>
             )
