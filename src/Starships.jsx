@@ -12,16 +12,26 @@ export default class Starships extends Component {
                 Accept: 'application/json'
             }
         }
-        axios.get(`https://swapi.dev/api/starships/9`)
-            .then(response => {
-                this.setState({
-                    starship: response.data.name,
-                    class: response.data.starship_class
-                })
+        // note to self = I need more work with .mpa
+        let ships = axios.get(`https://swapi.dev/api/starships/`).map((ships, i) => {
+            return(
+                <div
+                    key = {`ships-${i}`}
+                    ships = {ships}
+                ></div>
+            )
+        })
+    //         axios.get(`https://swapi.dev/api/starships/`)
+    //         .then(response => {
+    //             this.setState({
+    //                 starship: response.data.name,
+    //                 class: response.data.starship_class
+    //             })
                 
-            })
-            .catch(console.warn)
-    }
+    //         })
+    //         .catch(console.warn)
+     }
+    
     render() {
         return(
         <div>
