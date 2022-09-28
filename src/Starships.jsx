@@ -28,11 +28,6 @@ export default class Starships extends Component {
             console.warn(error)
             this.setState({ starship: 'Oh no! It\'s a trap!'})
         })
-            
-        // this.setState({ starships: response.data.results })
-
-        // console.warn(error)
-        // this.setState({ starships: 'Oh no! It\'s a trap!' })
     }
 
     render() {
@@ -46,7 +41,7 @@ export default class Starships extends Component {
                     manufacturer={starship.manufacturer}
                     cost={starship.cost_in_credits}
                     length={starship.length}
-
+                    pilots={starship.pilots}
                 />
             )
         })

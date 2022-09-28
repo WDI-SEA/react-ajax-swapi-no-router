@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
+import Pilot from './Pilot'
 
 export default class Starship extends Component {
     render() {
+        const pilots = this.props.pilots.map((pilot, i) => {
+            return(
+                <Pilot
+                    key={`pilot${i}`}
+                    pilot={pilot}
+                />
+            )
+        })
         return(
             <li>
                 <h2>{this.props.name}</h2>
@@ -15,6 +24,10 @@ export default class Starship extends Component {
                 <p>Length: {this.props.length}</p>
 
                 <p>Cost in credits: {this.props.cost}</p>
+
+                <ul>
+                    {pilots.length > 0 ? pilots : 'No pilots to display'}
+                </ul>
             </li>
         )
     }
