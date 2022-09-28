@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import Starships from './Starships'
+import axios from 'axios'
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        
+        App
+        <Starships />
       </div>
     )
   }
