@@ -9,15 +9,24 @@ export default class App extends Component {
   }
 
   // runs only once -- when the component is first being created and mounted on the virtual dom
-  commponentDidMount() {
-
+  componentDidMount() {
+    axios.get('http://swapi.dev/api/starships/')
+      .then(response => {
+        console.log('The API has responded!')
+        // console.log(response.data)
+        this.setState({ starships: response.data.results })
+      })
   }
 
   render() {
+    console.log(this.state.starships)
     return (
       <div>
-        App
-        <Starships />
+    
+        <Starships
+          starships={this.state.starships}
+        />
+        
       </div>
     )
   }
