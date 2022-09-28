@@ -4,17 +4,23 @@ import Pilot from './Pilot'
 
 
 export default class Starship extends Component {
+    state = {
+		pilots: []
+	}
 
     componentDidMount = async () => {
         try {
-            const data = this.props.pilots.map((url) => axios.get(url))
-            const promisedData = await Promise.all(data)
+            const urls = this.props.pilots.map((url) => axios.get(url))
+            const promisedData = await Promise.all(urls)
             const shallowState = []
             promisedData.forEach(pilot => {
-                shallowState.push({
-                    name: pilot.data.name,
-                    url: pilot.data.url
-                })
+                if (pilot.data.name) {
+                    shallowState.push({
+                        name: pilot.data.name,
+                        url: pilot.data.url
+                    })
+                }
+
             })
             
             this.setState({
@@ -25,12 +31,18 @@ export default class Starship extends Component {
         }
     }
     render() {
+        const pilotsInState = this.state.pilots.map((pilot, i) => {
+            return (
+                <Pilot
+                    name={pilot.name}
+                    url={pilot.url}
+                />
+            )
+        })
+
         return (
             <div>
-                <p>Name: {this.props.aShipName} - Class: {this.props.aShipClass}</p>
-                <Pilot 
-                    aShipPilot={this.props.aShipPilot}
-                />
+                <p>Name: {this.props.aShipName} - Class: {this.props.aShipClass}{ this.props.pilots.length ? <p>Piloted by:</p> : null }{pilotsInState}</p>
             </div>
         )
     }

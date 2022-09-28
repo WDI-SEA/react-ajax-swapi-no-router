@@ -3,9 +3,10 @@ import React, { Component } from 'react'
 export default class Pilot extends Component {
     render() {
         return (
-            <div>
-                <p></p>
-            </div>
+            <>
+                {/* <p><a href={this.props.url}>{this.props.name}</a></p> */}
+                <p>{this.props.name}</p>
+            </>
         )
     }
 }

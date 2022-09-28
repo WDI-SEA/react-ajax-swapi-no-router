@@ -9,7 +9,7 @@ export default class Starships extends Component {
                     <Starship 
                         aShipName={aShip.name}
                         aShipClass={aShip.starship_class}
-                        aShipPilot={aShip.pilot}
+                        pilots={aShip.pilots}
                     />
                 </div>
             )
