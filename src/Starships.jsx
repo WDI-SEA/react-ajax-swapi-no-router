@@ -1,10 +1,25 @@
 import React, { Component } from 'react'
 import Starship from './Starship'
+import axios from 'axios'
 
 export default class Starships extends Component {
+
+    state = {
+        starships: []
+    }
+
+    componentDidMount() {
+        axios.get('http://swapi.dev/api/starships/')
+          .then(response => {
+            console.log('The API has responded!')
+            // console.log(response.data)
+            this.setState({ starships: response.data.results })
+          })
+      }
+
     render() {
 
-        const allStarships = this.props.starships.map((starship, i) => {
+        const allStarships = this.state.starships.map((starship, i) => {
             if (starship) {
                 return (
                     <Starship
