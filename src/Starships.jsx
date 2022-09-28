@@ -12,7 +12,6 @@ export default class Starships extends Component {
         axios.get('http://swapi.dev/api/starships/')
           .then(response => {
             console.log('The API has responded!')
-            // console.log(response.data)
             this.setState({ starships: response.data.results })
           })
       }
