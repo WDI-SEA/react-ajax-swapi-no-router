@@ -14,11 +14,7 @@ export default class Starships extends Component {
                 </div>
             )
         })
-        // const shipClass = this.props.shipInfo.map(shipClass => {
-        //     return (
-        //         shipClass.starship_class
-        //     )
-        // })
+        
         return (
             <div>
                 <h1>Ship Name and Class</h1>

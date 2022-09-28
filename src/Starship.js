@@ -3,8 +3,7 @@ export default class Starship extends Component {
     render() {
         return (
             <div>
-                <p>Name: {this.props.aShipName}</p>
-                <p>Class: {this.props.aShipClass}</p>
+                <p>Name: {this.props.aShipName} - Class: {this.props.aShipClass}</p>
             </div>
         )
     }
