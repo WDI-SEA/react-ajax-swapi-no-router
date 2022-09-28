@@ -6,7 +6,7 @@ export default class Starships extends Component {
     state = {
         starShipsArray:[]
     }
-    // Lifestyles
+    // Lifecycle
 
     async componentDidMount(){
         try {
@@ -28,7 +28,9 @@ export default class Starships extends Component {
                     name={starship.name}
                     class={starship.starship_class}
                     cargoCapacity={starship.cargo_capacity}
-                    
+                    model={starship.model}
+                    cost={starship.cost_in_credits}
+                    pilots={starship.pilots}
                     key={`starshipKey${i}`}/>
             </div>
         )
