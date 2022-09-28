@@ -10,14 +10,12 @@ class Starships extends Component {
     componentDidMount() {
         axios.get("https://swapi.dev/api/starships")
             .then(response => {
-               
                 this.setState({
                     starships: response.data.results
                 })
             }) 
             .catch(console.warn)
     }
-
 
     render() {
         const allStarships = this.state.starships.map((starship, i) => {
@@ -29,10 +27,13 @@ class Starships extends Component {
             )
         })
         return (
-            <div id="Starships">
+            <div id="Starships"
+                style = {{
+                    textAlign: "center"
+                }}
+            >
+                <h1>STARSHIPS ARE MEANT TO FLY! 🛸</h1>
                {allStarships}
-                
-              
             </div>
         )
     }

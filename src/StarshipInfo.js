@@ -2,30 +2,29 @@ import React, { Component } from "react"
 
 class StarshipInfo extends Component {
     render() {
-      
         return (
             <div 
                 style = {{
-                    display: "flex"
-                    
+                    display: "flex",
+                    justifyContent: "center"
                 }}
             >
-                
                 <ul
                     style = {{
-                        width: "30vw"
-                        
+                        width: "30vw"   
                     }}
-                >Name: {this.props.starships.name}</ul>
+                >
+                    Name: {this.props.starships.name}
+                </ul>
                 <ul
                     style = {{
                         width: "30vw"  
                     }}
-                >Class: {this.props.starships.starship_class}</ul>
+                >
+                    Class: {this.props.starships.starship_class}
+                    </ul>
             </div>
-
         )
-
     }
 }
 
