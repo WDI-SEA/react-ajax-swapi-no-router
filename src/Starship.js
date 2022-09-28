@@ -4,8 +4,7 @@ export default class Starship extends Component {
     render() {
         return (
             <div className='starshipContainer'>
-                <h1>{this.props.name} - {this.props.model}</h1>
-                <p>{this.props.sClass} - {this.props.pilots}</p>
+                <h3>{this.props.starship.name} - {this.props.starship.starship_class}</h3>
             </div>
         )
     }
