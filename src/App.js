@@ -17,7 +17,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="m-5">
         <StarshipContainer starshipArray={this.state.starshipArray}/>
       </div>
     );

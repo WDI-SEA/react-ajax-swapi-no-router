@@ -13,7 +13,10 @@ class StarshipContainer extends Component {
         })
         return (
             <div>
-                {starshipComponents}
+                <h2 className="text-center text-5xl">Starships</h2>
+                <div className="mt-3 flex gap-3 flex-wrap justify-center">
+                    {starshipComponents}
+                </div>
             </div>
         );
     }
