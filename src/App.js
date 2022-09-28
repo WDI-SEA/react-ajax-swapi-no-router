@@ -8,7 +8,7 @@ export default class App extends Component {
     pageNum: 1
   }
 
-  handleClick = () => {
+  handleForwardClick = () => {
     if (this.state.pageNum < 4) {
       this.setState(prevState => {
         return (
@@ -20,10 +20,21 @@ export default class App extends Component {
     console.log(this.state.pageNum)
   }
 
+  handlePreviousClick = () => {
+    if (this.state.pageNum > 1) {
+      this.setState(prevState => {
+        return (
+          { pageNum: prevState.pageNum - 1 }
+        )
+      })
+    }
+   
+    console.log(this.state.pageNum)
+  }
+
 
   async componentDidMount() {
     try {
-
       const response = await axios.get(`https://swapi.dev/api/starships/?page=1`)
       this.setState({
         shipInfo: response.data.results
@@ -53,7 +64,10 @@ export default class App extends Component {
             shipInfo={this.state.shipInfo}
           />
         </div>
-        <button onClick={this.handleClick}>
+        <button onClick={this.handlePreviousClick}>
+          Previous Page
+        </button>
+        <button onClick={this.handleForwardClick}>
           Next Page
         </button>
       </div>
