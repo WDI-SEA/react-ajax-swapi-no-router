@@ -20,7 +20,7 @@ export default class Pilot extends Component {
         console.log(this.state.pilot)
         return (
             <div className='pilotInfo'>
-                <h4>{this.state.pilot.name}</h4>
+                <p>{this.state.pilot.name}</p>
                 {/* <h4>{this.state.pilot.gender}</h4> */}
             </div>
         )
