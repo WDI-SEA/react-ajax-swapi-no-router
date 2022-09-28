@@ -1,4 +1,21 @@
-.App {
+* {
+  text-align: center;
+  /* background-color: mediumpurple; */
+  
+}
+
+body {
+  background-image: url('https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-20-1.jpg');
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  color: yellow;
+}
+
+
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +52,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

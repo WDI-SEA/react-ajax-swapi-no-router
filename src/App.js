@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Starships from './Starships'
 import axios from 'axios'
+import './App.css'
+
 
 export default class App extends Component {
 
@@ -22,11 +24,11 @@ export default class App extends Component {
     console.log(this.state.starships)
     return (
       <div>
-    
+        <h1>STARSHIPS!</h1>
         <Starships
           starships={this.state.starships}
         />
-        
+
       </div>
     )
   }

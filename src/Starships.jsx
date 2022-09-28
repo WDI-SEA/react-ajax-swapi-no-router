@@ -19,8 +19,6 @@ export default class Starships extends Component {
         return (
             <div>
                 {allStarships}
-                
-
             </div>
         )
     }
