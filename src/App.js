@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './App.css';
-import Starship from './Starship'
+import Starships from './Starships'
 import axios from 'axios'
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Starship 
+        <Starships 
         starships={this.state.starships}/>
       </div>
     )
