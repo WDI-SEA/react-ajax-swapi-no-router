@@ -11,8 +11,13 @@ export default class Starship extends Component {
                 />
             )
         })
+
+        const style = {
+            gap: '1rem'
+        }
+
         return(
-            <li>
+            <li style={style}>
                 <h2>{this.props.name}</h2>
 
                 <p>Class: {this.props.class}</p>
@@ -25,6 +30,7 @@ export default class Starship extends Component {
 
                 <p>Cost in credits: {this.props.cost}</p>
 
+                <p>Pilots:</p>
                 <ul>
                     {pilots.length > 0 ? pilots : 'No pilots to display'}
                 </ul>

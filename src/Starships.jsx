@@ -45,11 +45,17 @@ export default class Starships extends Component {
                 />
             )
         })
+
+        const style = {
+            display: 'grid',
+            gridTemplateColumns: 'auto auto auto auto',
+        }
+
         return(
             <div>
-                <h1>Star Wars Starships</h1>
+                <h1 style={{ textAlign: 'center' }}>Star Wars Starships</h1>
 
-                <ul>
+                <ul style={style}>
                     {starships}
                 </ul>
             </div>
