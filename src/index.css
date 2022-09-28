@@ -5,6 +5,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* text-align: center; */
+  justify-content: center;
+  align-items: center;
+  float: left;
+  position: relative;
+  left: 40%;
+  background-image: url('https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-14.jpg');
+  background-size: cover;
+  background-repeat: none;
+  width: 1000px;
+  height: auto;
+  color: white;
 }
 
 code {

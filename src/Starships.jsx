@@ -27,7 +27,8 @@ export default class Starships extends Component {
                 <Starship 
                     name={starship.name}
                     class={starship.starship_class}
-                    films={starship.films}
+                    cargoCapacity={starship.cargo_capacity}
+                    
                     key={`starshipKey${i}`}/>
             </div>
         )

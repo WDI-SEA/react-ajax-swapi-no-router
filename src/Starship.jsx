@@ -25,10 +25,12 @@ export default class Starship extends Component {
     //     })
     // }
         return(
-            <div>
-                <li><h3>{this.props.name}</h3></li>
+            <div style={{margin: '35px'}}>
+                <h2 style={{color: 'red'}}>{this.props.name}</h2>
+                <div style={{color:'chartreuse'}}>
                 <p>Class: {this.props.class}</p>
-                <p>Appears on:</p>
+                <p>Passenger Capacity: <strong>{this.props.cargoCapacity}</strong></p>
+                </div>
             </div>
         )
     }
