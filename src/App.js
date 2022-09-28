@@ -1,27 +1,14 @@
 import React, {Component} from 'react'
 import './App.css';
 import Starships from './Starships'
-import axios from 'axios'
+
 
 class App extends Component {
-  state = {
-    starships: []
-  }
 
-  async componentDidMount() {
-    try {
-    const response = await axios.get('https://swapi.dev/api/starships')
-    this.setState({ starships: response.data.results})
-    }catch (err) {
-        this.setState({starships: 'there was an error'})
-        console.warn(err)
-    }
-  }
   render() {
     return (
       <div>
-        <Starships 
-        starships={this.state.starships}/>
+        <Starships />
       </div>
     )
   }
