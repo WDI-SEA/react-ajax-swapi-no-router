@@ -25,6 +25,7 @@ export default class App extends Component {
     return (
       <div>
         <h1>STARSHIPS!</h1>
+        <img src='https://www.denofgeek.com/wp-content/uploads/2019/12/x-wing.jpg?w=1024' />
         <Starships
           starships={this.state.starships}
         />
