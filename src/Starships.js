@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import axios from "axios"
-import StarshipName from "./StarshipName"
+import StarshipInfo from "./StarshipInfo"
 
 class Starships extends Component {
     state = {
@@ -22,7 +22,7 @@ class Starships extends Component {
     render() {
         const allStarships = this.state.starships.map((starship, i) => {
             return (
-                <StarshipName  
+                <StarshipInfo 
                 key={`starship${i}`}
                 starships = {starship}
                 />

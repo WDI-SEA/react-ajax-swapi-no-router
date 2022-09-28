@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-class StarshipName extends Component {
+class StarshipInfo extends Component {
     render() {
       
         return (
@@ -29,4 +29,4 @@ class StarshipName extends Component {
     }
 }
 
-export default StarshipName
+export default StarshipInfo
