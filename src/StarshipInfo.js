@@ -16,12 +16,12 @@ class StarshipInfo extends Component {
                         width: "30vw"
                         
                     }}
-                >{this.props.starships.name}</ul>
+                >Name: {this.props.starships.name}</ul>
                 <ul
                     style = {{
                         width: "30vw"  
                     }}
-                >{this.props.starships.model}</ul>
+                >Class: {this.props.starships.starship_class}</ul>
             </div>
 
         )
