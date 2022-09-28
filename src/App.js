@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import Starship from './Starships';
+import Starships from './Starships';
 
 
 export default class App extends Component {
   render(){
     return(
       <div>
-        <Starship />
+        <h1>Starwars Starship Log</h1>
+        <Starships />
       </div>
     )
   }

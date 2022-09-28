@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
-export default class Starship extends Component {
+import Starship from './Starship';
+export default class Starships extends Component {
     // State
     state = {
-        starShipsArray:''
+        starShipsArray:[]
     }
     // Lifestyles
 
     async componentDidMount(){
         try {
             const response = await axios.get('https://swapi.dev/api/starships/')
-            this.setState({starShipsArray: response.data})
+            this.setState({starShipsArray: response.data.results})
             console.log(this.state.starShipsArray)
         }catch(err){
             console.warn(err)
@@ -21,10 +21,22 @@ export default class Starship extends Component {
 
   render(){
     // Constants?
+    const starShips = this.state.starShipsArray.map((starship,i)=> {
+        return(
+            <div>
+                <Starship 
+                    name={starship.name}
+                    class={starship.starship_class}
+                    films={starship.films}
+                    key={`starshipKey${i}`}/>
+            </div>
+        )
+        
+    })
     return(
-      <div>
-        Starships
-      </div>
+            <ul>
+                {starShips}
+            </ul>
     )
   }
 }
