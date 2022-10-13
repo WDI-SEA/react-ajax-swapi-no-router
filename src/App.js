@@ -1,15 +1,29 @@
-import React, { Component } from "react";
-import Starship from './Starship';
-import Starships from './Starships';
+import React, { Component } from 'react';
 import axios from 'axios';
+import Starships from './Starships';
 
 export default class App extends Component {
-  render() {
-    // render is invoked on component moun
- return (
+  state= {
+    starships: []
+  };
+
+  async componentDidMount(){
+    try{
+
+      const response = await axios.get('https://swapi.dev/api/starships')
+      this.setState({starships: response.data.results})
+
+    } catch(err){
+      console.log(err)
+    };
+  };
+
+  render(){
+    console.log('App.js rendering')
+    return(
       <div>
-        <h1></h1> 
+        <Starships  starships={this.state.starships} />
       </div>
     )
-  }
-}
+  };
+};
