@@ -6,7 +6,10 @@ import axios from 'axios'
 export default class App extends Component {
   state = {
     starships: []
-}
+  }
+
+//DidMount runs once when our component is 'mounted' aka loaded
+//make a GET request to the api, fetch that data, and store it in a component's state (line 7-9)
 async componentDidMount() {
   try{
       const response = await axios.get(`https://swapi.dev/api/starships/`)
@@ -14,25 +17,34 @@ async componentDidMount() {
           starships: response.data.results
       })
       console.log(response.data.results)
-  } catch(error){
-      console.log(error.message)
+      // console.log('didmount is running')
+    } catch(error){
+        console.log(error.message)
+    }
   }
-}
 
+  //when component is rendered, map over the starships array in state and return a Starship component for each starship, passing it the starship's name, class, and other data as props
   render() {
+    console.log('rendered')
     const ships = this.state.starships.map((starship, i)=> {
       return(
+        //returned component that is being rendered
       <>
         <Starship 
-          key={`starship ${i}`}
-          
+          key={`starship-${i}`}
+          name={starship.name}
+          class={starship.starship_class}
+          // starship={starship}          
         />
       </>
       )
     })
 
     return (
-      <></>
+      <>
+        <div className style={{fontSize: '30px'}}>Starships</div>
+        {ships}
+      </>
     )
   }
 

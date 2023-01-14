@@ -4,12 +4,12 @@ import './App.css'
 
 export default class Starship extends Component {
     render() {
-        const starships = this.state.starships.map((starship, i) => {
-            
-        })
+        
         return(
             <div>
-                <h2>{starships.name}</h2>
+                <h3>Ship name: {this.props.name}</h3>
+                <p>Ship class: {this.props.class}</p>
+                
             </div>
         )
     }
