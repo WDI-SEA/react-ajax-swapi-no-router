@@ -12,7 +12,7 @@ export default class App extends Component {
 //make a GET request to the api, fetch that data, and store it in a component's state (line 7-9)
 async componentDidMount() {
   try{
-      const response = await axios.get(`https://swapi.dev/api/starships/`)
+      const response = await axios.get(`https://swapi.dev/api/starships?limit=50`)
       this.setState({
           starships: response.data.results
       })
@@ -25,18 +25,20 @@ async componentDidMount() {
 
   //when component is rendered, map over the starships array in state and return a Starship component for each starship, passing it the starship's name, class, and other data as props
   render() {
-    console.log('rendered')
+    // console.log('rendered')
     const ships = this.state.starships.map((starship, i)=> {
       return(
         //returned component that is being rendered
-      <>
+      <div>
         <Starship 
           key={`starship-${i}`}
           name={starship.name}
           class={starship.starship_class}
+          mglt={starship.MGLT}
+          crew={starship.crew}
           // starship={starship}          
         />
-      </>
+      </div>
       )
     })
 
@@ -48,6 +50,6 @@ async componentDidMount() {
     )
   }
 
- 
+
   
 }
