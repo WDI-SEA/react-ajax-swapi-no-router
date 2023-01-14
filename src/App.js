@@ -4,7 +4,6 @@ import Starship from './Starship'
 import axios from 'axios'
 
 export default class App extends Component {
-
   state = {
     starships: []
   }
@@ -18,24 +17,18 @@ export default class App extends Component {
     }
   }
 
-  
   render() {
-
     const starships = this.state.starships.map((starship, idx) => {
-      return(
-      <Starship
-        key={'starship-' + idx}
-        name={starship.name}
-        model={starship.model}
-        pilots={starship.pilots}
-      />
+      return (
+        <Starship
+          key={'starship-' + idx}
+          name={starship.name}
+          model={starship.model}
+          pilots={starship.pilots}
+        />
       )
     })
 
-    return (
-      <div className="App">
-      {starships}
-      </div>
-    )
+    return <div className="App">{starships}</div>
   }
 }
