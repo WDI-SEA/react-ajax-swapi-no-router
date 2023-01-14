@@ -26,30 +26,28 @@ async componentDidMount() {
   //when component is rendered, map over the starships array in state and return a Starship component for each starship, passing it the starship's name, class, and other data as props
   render() {
     // console.log('rendered')
-    const ships = this.state.starships.map((starship, i)=> {
+    const ships = this.state.starships.map((starship, idx)=> {
       return(
         //returned component that is being rendered
-      <div>
-        <Starship 
-          key={`starship-${i}`}
-          name={starship.name}
-          class={starship.starship_class}
-          mglt={starship.MGLT}
-          crew={starship.crew}
-          // starship={starship}          
-        />
-      </div>
+        <>
+          <Starship 
+            key={`starship-${idx}`}
+            name={starship.name}
+            class={starship.starship_class}
+            mglt={starship.MGLT}
+            crew={starship.crew}
+            // starship={starship}          
+          />
+        </>
       )
     })
 
     return (
       <>
-        <div className style={{fontSize: '30px'}}>Starships</div>
+        <div className="starship" style={{fontSize: '30px'}}>Starships</div>
         {ships}
       </>
     )
   }
 
-
-  
 }
