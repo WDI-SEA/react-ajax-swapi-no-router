@@ -1,45 +1,37 @@
+import axios from "axios";
 import React, { Component } from "react";
-import axios from 'axios'
+import Starship from "./Starship";
 
-export default class Starship extends Component{
+export default class Starships extends Component{
     state = {
-        name: '',
-        starshipClass: '' //starship_class
-        }
-        async componentDidMount(){
-            const url = 'https://swapi.dev/api/starships'
-        
-
-        try {
-            const response = await axios.get(url)
-            this.setState({
-                name: response.data.results.name,
-                class: response.data.results.starship_class
-            })
-        }catch(err){
-            console.log(err)
-        }
-        
+        starships: []
     }
-    handleGetStarships = async () => {
+    async componentDidMount(){
         try {
-            const url = 'https://swapi.dev/api/starships'
+            const url = 'http://swapi.dev/api/starships'
             const response = await axios.get(url)
             this.setState({
-                name: response.data.results.name,
-                class: response.data.results.starship_class
+                starships: response.data.results
             })
-        } catch (err){
-            console.warn(err)
+            console.log(response.data)
+        } catch(err){
+            console.log(err)
         }
     }
     render(){
-        return(
-            <>
-            <p>Name: {this.handleGetStarships.state.name}  </p>
-            <p>Class: {this.handleGetStarships.state.starshipClass}</p>
-          
-            </>
-        )
+        const starshipComponents = this.state.starships.map((starship, i) => {
+            return(
+            <Starship 
+                starship={starship}
+                key={`Starship${i}`}
+                />
+            )
+        })
+            return(
+            <div>
+                <h1>Starships: </h1>
+                {starshipComponents}
+            </div>
+        )  
     }
 }
