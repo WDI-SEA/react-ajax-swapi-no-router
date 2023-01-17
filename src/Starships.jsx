@@ -8,16 +8,15 @@ export default class Starships extends Component {
     render () {
         console.log('render')
 
-        const starshipsMap = this.props.starships.map((ship, i) => {
-            return (
-                <>
-                <h3>Name: {this.state.ship.name}</h3>
-                <h3>Model: {this.state.ship.model}</h3>
-                <h3>Manufacturer: {this.state.ship.manufacturer}</h3>
-                <h3>Cost in Credits: {this.state.ship.cost_in_credits}</h3>
-                <h3>Starship Class: {this.state.ship.starship_class}</h3>
-                </>
-            )
-        })
+        return (
+            <>
+            <h1>Ship#: {this.props.index + 1}</h1>
+            <h2>Name: {this.props.name}</h2>
+            <h4>Model: {this.props.model}</h4>
+            <h4>Manufacturer: {this.props.manufacturer}</h4>
+            <h4>Cost in Credits: {this.props.cost}</h4>
+            <h4>Starship Class: {this.props.class}</h4>
+            </>
+        )
     }
 }
