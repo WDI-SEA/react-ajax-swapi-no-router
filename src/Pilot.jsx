@@ -18,11 +18,16 @@ export default class Pilot extends Component {
                 })
         })} else {
             return (
-                "No Pilots"
+                this.setState({
+                    pilots: "No Pilots"
+                   })
             )
         }
     }
     render(){
+        if (this.props.starship.pilots.length > 0) {
+            
+        }
         return(
             <>
             <h5>
