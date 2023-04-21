@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.Starship-name {
+  font-weight: bold;
+}
+
+.Ship-info {
+  display: flex;
+
+}
+
+.Ship-bullets {
+  text-align: start;
+}
