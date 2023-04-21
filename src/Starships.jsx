@@ -29,6 +29,20 @@ export default class Starships extends Component {
         // console.log("the component Updated")
     }
 
+    handleFetch = async () => {
+        let i = 2
+        try {
+            const response = await axios.get(`https://swapi.dev/api/starships/?page=${i}`)
+            this.setState({
+                starships: response.data.results
+            })
+            return i++
+        }catch(err){
+            console.log('err')
+        }
+        
+    }
+
   render() {
 
     const ships = this.state.starships.map((ship, i) =>{
@@ -40,17 +54,23 @@ export default class Starships extends Component {
         key={"ship" + i}
         name={ship.name}
         shipClass={ship.starship_class}
-        className 
+        speed={ship.max_atmosphering_speed}
+        drive={ship.hyperdrive_rating}
+        className="container"
         >
-        <h2>Starship name is: {ship.name}</h2>
-        <p>Starship class is: {ship.starship_class}</p>
+        <h2>{ship.name}</h2>
+        <li>Class: {ship.starship_class}</li>
+        <li>Speed: {ship.max_atmosphering_speed}</li>
+        <li>Hyperdrive: {ship.hyperdrive_rating}</li>
         </div>
         )
     })
 
+    
 
     return (
       <>
+      <button onClick={this.handleFetch} className='more'>More Ships</button>
       {ships}
       </>
     )
