@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import StarshipInfo from './StarshipInfo'
+import styles from './App.css'
 
 class AllStarships extends Component {
   state = {
@@ -29,9 +30,8 @@ console.log(this.state.starships)
 
   return  (
     <div>
-      <h2>Starwars Starships:</h2>
-      <p>{starshipComponents}</p>
-      
+      <h1>Starwars Starships:</h1>
+      {starshipComponents}
     </div>
     )
   }
