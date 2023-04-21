@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Starships from './Starships'
+import Starships from './Starships';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      starships: [],
-    };
-  }
+  state = {
+    starships: [],
+  };
 
   componentDidMount() {
     this.getStarships();

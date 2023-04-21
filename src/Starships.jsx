@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Starship from './Starship';
 
-const Starships = ({ starships }) => {
-  return (
-    <div>
-      {starships.map(starship => (
-        <Starship key={starship.name} name={starship.name} starshipClass={starship.starship_class} />
-      ))}
-    </div>
-  );
-};
+class Starships extends Component {
+  render() {
+    const { starships } = this.props;
+
+    return (
+      <div>
+        {starships.map(starship => (
+          <Starship
+            key={starship.name}
+            name={starship.name}
+            starshipClass={starship.starship_class}
+            cost={starship.cost_in_credits}
+            url={starship.url}
+          />
+        ))}
+      </div>
+    );
+  }
+}
 
 export default Starships;
