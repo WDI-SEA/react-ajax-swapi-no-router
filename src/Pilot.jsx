@@ -7,7 +7,7 @@ export default class Pilot extends Component {
     }
     componentDidMount() {
         const pilotList = [];
-        if (this.props.starship.pilots.length > 0) {
+        if (this.props.starship.pilots.length) {
         this.props.starship.pilots.map((pilot, i) => {
                 const pilotInfo = axios.get(pilot).then(response =>{
                     console.log(response.data.name)
